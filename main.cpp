@@ -1,0 +1,6 @@
+#include "graphicsmathlib.h"
+
+int main()
+{
+	return 0;
+}
