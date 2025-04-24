@@ -108,6 +108,16 @@ public:
 	}
 
 	/// <summary>
+	/// Custom subtraction operator
+	/// </summary>
+	/// <param name="other">Other vector being subtracted</param>
+	/// <returns></returns>
+	Vector3 operator-(const Vector3& other)
+	{
+		return Vector3(x - other.x, y - other.y, z - other.z);
+	}
+
+	/// <summary>
 	/// Custom comparison operator
 	/// </summary>
 	/// <param name="other">Other vector being compared</param>
