@@ -59,5 +59,20 @@ namespace UnitTests
 
 			Assert::AreEqual(Vector3(1, 1, 4), a + b);
 		}
+
+		TEST_METHOD(Vector2Subtraction)
+		{
+			// Basic subtraction
+			Vector2 a = Vector2(1, 1);
+			Vector2 b = Vector2(1, 1);
+
+			Assert::AreEqual(Vector2(0, 0), a - b);
+
+			// subtraction with negative vectors
+			a = Vector2(-5, 3);
+			b = Vector2(6, -2);
+
+			Assert::AreEqual(Vector2(-11, 5), a - b);
+		}
 	};
 }

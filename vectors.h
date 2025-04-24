@@ -10,7 +10,6 @@ vector2 - 2d vector
 	scalar multiplication
 	scalar division
 vector3 - 3d vector
-	addition
 	subtraction
 	dot product
 	cross product
@@ -43,11 +42,21 @@ public:
 	/// <summary>
 	/// Custom addition operator
 	/// </summary>
-	/// <param name="other">Other vector being aded</param>
+	/// <param name="other">Other vector being added</param>
 	/// <returns>New Vector2</returns>
 	Vector2 operator+(const Vector2& other)
 	{
 		return Vector2(x + other.x, y + other.y);
+	}
+
+	/// <summary>
+	/// Custom subtraction operator
+	/// </summary>
+	/// <param name="other">Other vector being subtracted</param>
+	/// <returns></returns>
+	Vector2 operator-(const Vector2& other)
+	{
+		return Vector2(x - other.x, y - other.y);
 	}
 	
 	/// <summary>
