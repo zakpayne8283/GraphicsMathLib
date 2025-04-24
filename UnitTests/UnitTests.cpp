@@ -103,5 +103,19 @@ namespace UnitTests
 
 			Assert::AreEqual(Vector3(-11, 5, -4), a - b);
 		}
+
+		TEST_METHOD(Vector3DotProduct)
+		{
+			// Dot product with positive ints
+			Vector3 a = Vector3(1, 1, 1);
+			Vector3 b = Vector3(1, 1, 1);
+
+			Assert::AreEqual(Vector3::dotProduct(a, b), 3.0f);
+
+			// Dot product with negatives and floats
+			a = Vector3(0.6f, -8.4f,  2.3f);
+			b = Vector3(1.7f,  2.2f, -2.3f);
+			Assert::AreEqual(Vector3::dotProduct(a, b), -22.75f);
+		}
 	};
 }

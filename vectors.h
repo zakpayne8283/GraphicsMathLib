@@ -4,12 +4,10 @@
 
 /* TODO definitions :
 vector2 - 2d vector
-	dot product
 	cross product
 	scalar multiplication
 	scalar division
 vector3 - 3d vector
-	dot product
 	cross product
 	scalar multiplication
 	scalar division
@@ -124,6 +122,17 @@ public:
 	Vector3 operator-(const Vector3& other)
 	{
 		return Vector3(x - other.x, y - other.y, z - other.z);
+	}
+
+	/// <summary>
+	/// Returns the dot product of two Vector3
+	/// </summary>
+	/// <param name="a">First vector</param>
+	/// <param name="b">Second vector</param>
+	/// <returns>Dot product results</returns>
+	static float dotProduct(const Vector3& a, const Vector3& b)
+	{
+		return (a.x * b.x) + (a.y * b.y) + (a.z * b.z);
 	}
 
 	/// <summary>
