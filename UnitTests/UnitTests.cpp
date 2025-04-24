@@ -28,6 +28,9 @@ namespace UnitTests
 
 	TEST_CLASS(UnitTests)
 	{
+
+		const float FLOAT_TOLERANCE = 0.00001f;
+
 	public:
 		
 		TEST_METHOD(Vector2Addition)
@@ -116,6 +119,25 @@ namespace UnitTests
 			a = Vector3(0.6f, -8.4f,  2.3f);
 			b = Vector3(1.7f,  2.2f, -2.3f);
 			Assert::AreEqual(Vector3::dotProduct(a, b), -22.75f);
+		}
+	
+		TEST_METHOD(Vector3CrossProduct)
+		{
+			// Cross product with positive ints
+			Vector3 a = Vector3(1, 1, 1);
+			Vector3 b = Vector3(2, 2, 2);
+
+			Assert::AreEqual(Vector3(0, 0, 0), Vector3::crossProduct(a, b));
+
+			// Cross product with negatives and floats
+			a = Vector3(0.6f, -8.4f, 2.3f);
+			b = Vector3(1.7f, 2.2f, -2.3f);
+
+			// Because of floating point percision, assess using a floating point percision const
+			// zeroVector - all values should be less than the float percision const
+			Vector3 zeroVector   = Vector3(14.26f, 5.29f, 15.6f) - Vector3::crossProduct(a, b);
+
+			Assert::IsTrue(zeroVector.x < FLOAT_TOLERANCE && zeroVector.y < FLOAT_TOLERANCE && zeroVector.z < FLOAT_TOLERANCE);
 		}
 	};
 }

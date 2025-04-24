@@ -4,7 +4,6 @@
 
 /* TODO definitions :
 vector2 - 2d vector
-	cross product
 	scalar multiplication
 	scalar division
 vector3 - 3d vector
@@ -133,6 +132,17 @@ public:
 	static float dotProduct(const Vector3& a, const Vector3& b)
 	{
 		return (a.x * b.x) + (a.y * b.y) + (a.z * b.z);
+	}
+
+	/// <summary>
+	/// Returns the cross product of two Vector3
+	/// </summary>
+	/// <param name="a"></param>
+	/// <param name="b"></param>
+	/// <returns></returns>
+	static Vector3 crossProduct(const Vector3& a, const Vector3& b)
+	{
+		return Vector3((a.y * b.z - a.z * b.y), (a.z * b.x - a.x * b.z), (a.x * b.y - a.y * b.x));
 	}
 
 	/// <summary>
