@@ -4,13 +4,11 @@
 
 /* TODO definitions :
 vector2 - 2d vector
-	subtration
 	dot product
 	cross product
 	scalar multiplication
 	scalar division
 vector3 - 3d vector
-	subtraction
 	dot product
 	cross product
 	scalar multiplication
@@ -59,6 +57,17 @@ public:
 		return Vector2(x - other.x, y - other.y);
 	}
 	
+	/// <summary>
+	/// Returns the dot product of two Vector2
+	/// </summary>
+	/// <param name="a">First vector</param>
+	/// <param name="b">Second vector</param>
+	/// <returns>Dot product results</returns>
+	static float dotProduct(const Vector2& a, const Vector2& b)
+	{
+		return (a.x * b.x) + (a.y * b.y);
+	}
+
 	/// <summary>
 	/// Custom comparison operator
 	/// </summary>

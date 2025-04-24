@@ -60,6 +60,20 @@ namespace UnitTests
 			Assert::AreEqual(Vector2(-11, 5), a - b);
 		}
 
+		TEST_METHOD(Vector2DotProduct)
+		{
+			// Dot product with positive ints
+			Vector2 a = Vector2(1, 1);
+			Vector2 b = Vector2(1, 1);
+
+			Assert::AreEqual(Vector2::dotProduct(a, b), 2.0f);
+		
+			// Dot product with negatives and floats
+			a = Vector2(0.6f, -8.4f);
+			b = Vector2(1.7f, 2.2f);
+			Assert::AreEqual(Vector2::dotProduct(a, b), -17.46f);
+		}
+
 		TEST_METHOD(Vector3Addition)
 		{
 			// Basic addition
