@@ -74,6 +74,17 @@ namespace UnitTests
 			Assert::AreEqual(Vector2(-2.4f, -2.4f), a * -2.4f);
 		}
 
+		TEST_METHOD(Vector2ScalarDivision)
+		{
+			Vector2 a = Vector2(2, 2);
+
+			// Basic scalar multiplication
+			Assert::AreEqual(Vector2(1, 1), a / 2);
+
+			// Scalar multiplication with floats and negatives
+			Assert::AreEqual(Vector2(-0.5f, -0.5f), a / -4);
+		}
+
 		TEST_METHOD(Vector2DotProduct)
 		{
 			// Dot product with positive ints
@@ -127,6 +138,17 @@ namespace UnitTests
 
 			// Scalar multiplication with floats and negatives
 			Assert::AreEqual(Vector3(-2.4f, -2.4f, -2.4f), a * -2.4f);
+		}
+
+		TEST_METHOD(Vector3ScalarDivision)
+		{
+			Vector3 a = Vector3(2, 2, 2);
+
+			// Basic scalar multiplication
+			Assert::AreEqual(Vector3(1, 1, 1), a / 2);
+
+			// Scalar multiplication with floats and negatives
+			Assert::AreEqual(Vector3(-0.5f, -0.5f, -0.5f), a / -4);
 		}
 
 		TEST_METHOD(Vector3DotProduct)

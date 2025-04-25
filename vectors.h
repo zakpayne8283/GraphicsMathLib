@@ -4,10 +4,8 @@
 
 /* TODO definitions :
 vector2 - 2d vector
-	scalar multiplication
 	scalar division
 vector3 - 3d vector
-	scalar multiplication
 	scalar division
 hvector - 4d vector
 */
@@ -62,6 +60,17 @@ public:
 	Vector2 operator*(const T& scalar)
 	{
 		return Vector2(x * scalar, y * scalar);
+	}
+
+	/// <summary>
+	/// Custom division operator for scalar division
+	/// </summary>
+	/// <param name="scalar">Value to scale by</param>
+	/// <returns>Vector2 with scale</returns>
+	template <typename T>
+	Vector2 operator/(const T& scalar)
+	{
+		return Vector2(x / scalar, y / scalar);
 	}
 
 	/// <summary>
@@ -164,6 +173,17 @@ public:
 	Vector3 operator*(const T& scalar)
 	{
 		return Vector3(x * scalar, y * scalar, z * scalar);
+	}
+
+	/// <summary>
+	/// Custom division operator for scalar division
+	/// </summary>
+	/// <param name="scalar">Value to scale by</param>
+	/// <returns>Vector3 with scale</returns>
+	template <typename T>
+	Vector3 operator/(const T& scalar)
+	{
+		return Vector3(x / scalar, y / scalar, z / scalar);
 	}
 
 	/// <summary>
