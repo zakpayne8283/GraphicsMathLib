@@ -18,6 +18,11 @@ namespace Microsoft {
 			inline std::wstring ToString<Vector3>(const Vector3& v) {
 				return L"Vector3(" + std::to_wstring(v.x) + L", " + std::to_wstring(v.y) + L", " + std::to_wstring(v.z) + L")";
 			}
+
+			template<>
+			inline std::wstring ToString<RGB>(const RGB& color) {
+				return L"RGB(" + std::to_wstring(color.r) + L", " + std::to_wstring(color.g) + L", " + std::to_wstring(color.b) + L")";
+			}
 		}
 	}
 }
@@ -216,6 +221,20 @@ namespace UnitTests
 
 			// Delete pointer
 			delete color;
+		}
+
+		TEST_METHOD(RGBAddition)
+		{
+			RGB color = RGB(10, 10, 10);
+			RGB other = RGB(50, 50, 50);
+
+			// Basic addition
+			Assert::AreEqual(RGB(60, 60, 60), color + other);
+
+			// Should max out at 255
+			color = RGB(255, 255, 255);
+
+			Assert::AreEqual(RGB(255, 255, 255), color + other);
 		}
 	};
 }

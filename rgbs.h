@@ -35,5 +35,27 @@ public:
 		b = _b;
 	}
 
+	/// <summary>
+	/// Overloaded + for adding to RGBs together
+	/// </summary>
+	/// <param name="other">Other RGB being added</param>
+	/// <returns>Added RGB values</returns>
+	RGB operator+(const RGB& other)
+	{
+		return RGB(
+			(r > 255 - other.r) ? 255 : r + other.r,
+			(g > 255 - other.g) ? 255 : g + other.g,
+			(b > 255 - other.b) ? 255 : b + other.b
+		);
+	}
 
+	/// <summary>
+	/// Custom comparison operator
+	/// </summary>
+	/// <param name="other">Other RGB being compared</param>
+	/// <returns>RGBs are equal</returns>
+	bool operator==(const RGB& other) const
+	{
+		return r == other.r && g == other.g && b == other.b;
+	}
 };
