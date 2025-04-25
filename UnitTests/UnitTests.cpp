@@ -236,5 +236,19 @@ namespace UnitTests
 
 			Assert::AreEqual(RGB(255, 255, 255), color + other);
 		}
+
+		TEST_METHOD(RGBSubtraction)
+		{
+			RGB color = RGB(50, 50, 50);
+			RGB other = RGB(10, 10, 10);
+
+			// Basic addition
+			Assert::AreEqual(RGB(40, 40, 40), color - other);
+
+			// Should min out at 0
+			color = RGB(0, 0, 0);
+
+			Assert::AreEqual(RGB(0, 0, 0), color - other);
+		}
 	};
 }

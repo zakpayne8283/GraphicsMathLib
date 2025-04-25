@@ -50,6 +50,20 @@ public:
 	}
 
 	/// <summary>
+	/// Overloaded - for subtracting RGBs
+	/// </summary>
+	/// <param name="other">Other RGB</param>
+	/// <returns>RGB minus other</returns>
+	RGB operator-(const RGB& other)
+	{
+		return RGB(
+			(r < 0 + other.r) ? 0 : r - other.r,
+			(g < 0 + other.g) ? 0 : g - other.g,
+			(b < 0 + other.b) ? 0 : b - other.b
+		);
+	}
+
+	/// <summary>
 	/// Custom comparison operator
 	/// </summary>
 	/// <param name="other">Other RGB being compared</param>
