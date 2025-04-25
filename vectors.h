@@ -7,7 +7,6 @@ vector2 - 2d vector
 	scalar multiplication
 	scalar division
 vector3 - 3d vector
-	cross product
 	scalar multiplication
 	scalar division
 hvector - 4d vector
@@ -54,6 +53,17 @@ public:
 		return Vector2(x - other.x, y - other.y);
 	}
 	
+	/// <summary>
+	/// Custom multiplation operator for scalar multiplication
+	/// </summary>
+	/// <param name="scalar">Value to scale by</param>
+	/// <returns>Vector2 with scale</returns>
+	template <typename T>
+	Vector2 operator*(const T& scalar)
+	{
+		return Vector2(x * scalar, y * scalar);
+	}
+
 	/// <summary>
 	/// Returns the dot product of two Vector2
 	/// </summary>
@@ -146,6 +156,17 @@ public:
 	}
 
 	/// <summary>
+	/// Custom multiplation operator for scalar multiplication
+	/// </summary>
+	/// <param name="scalar">Value to scale by</param>
+	/// <returns>Vector3 with scale</returns>
+	template <typename T>
+	Vector3 operator*(const T& scalar)
+	{
+		return Vector3(x * scalar, y * scalar, z * scalar);
+	}
+
+	/// <summary>
 	/// Custom comparison operator
 	/// </summary>
 	/// <param name="other">Other vector being compared</param>
@@ -157,6 +178,6 @@ public:
 	// Custom print - used for testing
 	void print()
 	{
-		printf("Vector2 - (X: %f, Y: %f)", x, y);
+		printf("Vector3 - (X: %f, Y: %f, Z: %f)", x, y, z);
 	}
 };
