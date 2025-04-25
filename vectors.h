@@ -2,12 +2,11 @@
 
 #include<cstdio>	// TODO: move this maybe? Check if it's already been added?
 
-/* TODO definitions :
-vector2 - 2d vector
-	scalar division
-vector3 - 3d vector
-	scalar division
-hvector - 4d vector
+/*
+
+TODO definitions :
+	- hvector: 4d vector
+
 */
 
 /// <summary>

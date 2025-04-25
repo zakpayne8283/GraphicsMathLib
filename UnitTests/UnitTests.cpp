@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "CppUnitTest.h"
 
-#include "../vectors.h"
+#include "../graphicsmathlib.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -26,13 +26,23 @@ namespace Microsoft {
 namespace UnitTests
 {
 
-	TEST_CLASS(UnitTests)
+	TEST_CLASS(VectorUnitTests)
 	{
 
 		const float FLOAT_TOLERANCE = 0.00001f;
 
 	public:
 		
+		TEST_METHOD(Vector2Creation)
+		{
+			Vector2* vector = new Vector2(0, 0);
+
+			Assert::IsNotNull(vector);
+
+			// Delete pointer
+			delete vector;
+		}
+
 		TEST_METHOD(Vector2Addition)
 		{
 			// Basic addition
@@ -97,6 +107,16 @@ namespace UnitTests
 			a = Vector2(0.6f, -8.4f);
 			b = Vector2(1.7f, 2.2f);
 			Assert::AreEqual(Vector2::dotProduct(a, b), -17.46f);
+		}
+
+		TEST_METHOD(Vector3Creation)
+		{
+			Vector3* vector = new Vector3(0, 0, 0);
+
+			Assert::IsNotNull(vector);
+
+			// Delete pointer
+			delete vector;
 		}
 
 		TEST_METHOD(Vector3Addition)
@@ -184,5 +204,18 @@ namespace UnitTests
 			Assert::IsTrue(zeroVector.x < FLOAT_TOLERANCE && zeroVector.y < FLOAT_TOLERANCE && zeroVector.z < FLOAT_TOLERANCE);
 		}
 	
+	};
+
+	TEST_CLASS(RGBUnitTests)
+	{
+		TEST_METHOD(RGBCreation)
+		{
+			RGB* color = new RGB(255, 255, 255);
+
+			Assert::IsNotNull(color);
+
+			// Delete pointer
+			delete color;
+		}
 	};
 }

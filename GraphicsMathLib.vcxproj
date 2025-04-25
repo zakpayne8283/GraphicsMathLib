@@ -131,6 +131,7 @@
     <ClCompile Include="transforms.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="graphicsmathlib.h" />
     <ClInclude Include="images.h" />
     <ClInclude Include="rgbs.h" />
     <ClInclude Include="vectors.h" />

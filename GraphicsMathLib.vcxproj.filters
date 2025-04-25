@@ -32,5 +32,8 @@
     <ClInclude Include="images.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="graphicsmathlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
