@@ -250,5 +250,19 @@ namespace UnitTests
 
 			Assert::AreEqual(RGB(0, 0, 0), color - other);
 		}
+
+		TEST_METHOD(RGBMultiplication)
+		{
+			RGB color = RGB(5, 5, 5);
+			RGB other = RGB(10, 10, 10);
+
+			// Basic multiplication
+			Assert::AreEqual(RGB(50, 50, 50), color * other);
+
+			// Should max out at 255
+			color = RGB(255, 255, 255);
+
+			Assert::AreEqual(RGB(255, 255, 255), color * other);
+		}
 	};
 }

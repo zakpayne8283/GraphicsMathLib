@@ -7,8 +7,6 @@
 /*
 should implement the following:
 
-rgb addition
-rgb subtraction
 rgb multiplication
 scalar multiplication
 scalar division
@@ -60,6 +58,20 @@ public:
 			(r < 0 + other.r) ? 0 : r - other.r,
 			(g < 0 + other.g) ? 0 : g - other.g,
 			(b < 0 + other.b) ? 0 : b - other.b
+		);
+	}
+
+	/// <summary>
+	/// Overloaded * for multiplying RGBs
+	/// </summary>
+	/// <param name="other">Other RGB</param>
+	/// <returns>RGB multiplied by other</returns>
+	RGB operator*(const RGB& other)
+	{
+		return RGB(
+			(r > 255 / other.r) ? 255 : r * other.r,
+			(g > 255 / other.g) ? 255 : g * other.g,
+			(b > 255 / other.b) ? 255 : b * other.b
 		);
 	}
 
