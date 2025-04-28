@@ -20,6 +20,9 @@ public:
 	// Colors as unsigned 8bit integers 
 	colorint r, g, b;
 
+	static const RGB MAX_RGB;
+	static const RGB MIN_RGB;
+
 	/// <summary>
 	/// Basic constructor. Accepts RGB as unsigned 8bit ints.
 	/// </summary>
@@ -85,3 +88,7 @@ public:
 		return r == other.r && g == other.g && b == other.b;
 	}
 };
+
+// Define max and min constants
+const RGB RGB::MAX_RGB = RGB(255, 255, 255);
+const RGB RGB::MIN_RGB = RGB(0, 0, 0);

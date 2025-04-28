@@ -215,7 +215,7 @@ namespace UnitTests
 	{
 		TEST_METHOD(RGBCreation)
 		{
-			RGB* color = new RGB(255, 255, 255);
+			RGB* color = new RGB(255, 255, 255);	// Do not use max here - testing instantiation
 
 			Assert::IsNotNull(color);
 
@@ -232,9 +232,9 @@ namespace UnitTests
 			Assert::AreEqual(RGB(60, 60, 60), color + other);
 
 			// Should max out at 255
-			color = RGB(255, 255, 255);
+			color = RGB::MAX_RGB;
 
-			Assert::AreEqual(RGB(255, 255, 255), color + other);
+			Assert::AreEqual(RGB::MAX_RGB, color + other);
 		}
 
 		TEST_METHOD(RGBSubtraction)
@@ -248,7 +248,7 @@ namespace UnitTests
 			// Should min out at 0
 			color = RGB(0, 0, 0);
 
-			Assert::AreEqual(RGB(0, 0, 0), color - other);
+			Assert::AreEqual(RGB::MIN_RGB, color - other);
 		}
 
 		TEST_METHOD(RGBMultiplication)
@@ -262,7 +262,7 @@ namespace UnitTests
 			// Should max out at 255
 			color = RGB(255, 255, 255);
 
-			Assert::AreEqual(RGB(255, 255, 255), color * other);
+			Assert::AreEqual(RGB::MAX_RGB, color * other);
 		}
 	};
 }
