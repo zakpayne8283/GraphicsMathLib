@@ -79,6 +79,22 @@ public:
 	}
 
 	/// <summary>
+	/// Overload * operator for scalar multiplication
+	/// </summary>
+	/// <typeparam name="T">Type of multiplication</typeparam>
+	/// <param name="scalar">Real number to scale by</param>
+	/// <returns>Scaled RGB value</returns>
+	template<typename T>
+	RGB operator*(const T& scalar)
+	{
+		return RGB(
+			(r > 255 / scalar) ? 255 : r * scalar,
+			(g > 255 / scalar) ? 255 : g * scalar,
+			(b > 255 / scalar) ? 255 : b * scalar
+		);
+	}
+
+	/// <summary>
 	/// Custom comparison operator
 	/// </summary>
 	/// <param name="other">Other RGB being compared</param>

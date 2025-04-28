@@ -260,9 +260,20 @@ namespace UnitTests
 			Assert::AreEqual(RGB(50, 50, 50), color * other);
 
 			// Should max out at 255
-			color = RGB(255, 255, 255);
+			color = RGB::MAX_RGB;
 
 			Assert::AreEqual(RGB::MAX_RGB, color * other);
+		}
+
+		TEST_METHOD(RGBScalarMultiplication)
+		{
+			RGB color = RGB(5, 5, 5);
+
+			// Basic scalar
+			Assert::AreEqual(RGB(50, 50, 50), color * 10);
+
+			// Should max out at 255
+			Assert::AreEqual(RGB::MAX_RGB, color * 1000);
 		}
 	};
 }
